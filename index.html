@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impeachment Dias Toffoli - Pela Imparcialidade da Suprema Corte</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --verde-escuro: #004d2c;
+            --verde-medio: #00703c;
+            --verde-claro: #008f4c;
+            --verde-bandeira: #009739;
+            --branco: #ffffff;
+            --branco-gelo: #f8f9fa;
+            --amarelo: #ffd700;
+            --amarelo-escuro: #d4af37;
+            --amarelo-suave: #fff9e6;
+            --cinza-escuro: #2c2c2c;
+            --cinza-medio: #4a4a4a;
+            --cinza-claro: #e0e0e0;
+            --cinza-cards: #d8d8d8;
+            --verde-suave: #e8f5e9;
+            --preto: #000000;
+        }
+
+        body {
+            font-family: 'Roboto', 'Helvetica', Arial, sans-serif;
+            background-color: var(--branco-gelo);
+            color: var(--preto);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Header Fixo */
+        .header-fixo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--verde-medio) 0%, var(--verde-claro) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 4px solid var(--amarelo);
+            z-index: 1000;
+            padding: 1.2rem 2rem;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .header-texto {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--branco);
+            max-width: 280px;
+            line-height: 1.4;
+        }
+
+        .header-titulo {
+            text-align: justify;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: var(--branco);
+            line-height: 1.4;
+        }
+
+        .header-direito {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .foto-toffoli {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid var(--amarelo);
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
+
+        .fora-toffoli-header {
+            color: var(--amarelo);
+            font-weight: 900;
+            font-size: 1.1rem;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .fora-toffoli-header:hover {
+            color: var(--amarelo-escuro);
+            transform: scale(1.05);
+        }
+
+        /* Container Principal */
+        .container {
+            margin-top: 160px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2rem;
+        }
+
+        /* Primeira Seção - Hero */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+            margin-bottom: 5rem;
+            align-items: center;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border: 3px solid var(--verde-escuro);
+            box-shadow: 0 10px 30px rgba(0,77,44,0.3);
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde-medio) 100%);
+            border: 3px solid var(--amarelo);
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,77,44,0.25);
+            position: relative;
+            border-radius: 8px;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--amarelo) 0%, var(--amarelo-escuro) 50%, var(--amarelo) 100%);
+        }
+
+        .btn-principal {
+            background: linear-gradient(135deg, var(--amarelo) 0%, var(--amarelo-escuro) 100%);
+            color: var(--preto);
+            padding: 1.5rem 2rem;
+            border: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(255,215,0,0.5);
+            text-decoration: none;
+            display: block;
+            font-family: 'Roboto', sans-serif;
+            border-radius: 4px;
+        }
+
+        .btn-principal:hover {
+            background: linear-gradient(135deg, var(--amarelo-escuro) 0%, var(--amarelo) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(255,215,0,0.6);
+        }
+
+        .autor-link {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--branco);
+        }
+
+        .autor-link a {
+            color: var(--amarelo);
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 2px solid var(--amarelo);
+            transition: all 0.3s ease;
+        }
+
+        .autor-link a:hover {
+            color: var(--amarelo-escuro);
+            border-bottom-color: var(--amarelo-escuro);
+        }
+
+        /* Contador de Assinaturas */
+        .contador-container {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            border: 2px solid rgba(255,215,0,0.3);
+        }
+
+        .contador-titulo {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--amarelo);
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .progress-ring {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        .progress-ring svg {
+            transform: rotate(-90deg);
+        }
+
+        .progress-ring-circle {
+            transition: stroke-dashoffset 1s ease;
+            stroke: var(--amarelo);
+            stroke-width: 8;
+            fill: none;
+        }
+
+        .progress-ring-bg {
+            stroke: rgba(255,255,255,0.2);
+            stroke-width: 8;
+            fill: none;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .progress-numero {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--amarelo);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .progress-meta {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 0.5rem;
+        }
+
+        /* Segunda Seção - Atos */
+        .atos-section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--verde-escuro);
+            letter-spacing: -1px;
+        }
+
+        .atos-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .ato-card {
+            background: linear-gradient(135deg, var(--cinza-cards) 0%, #c8c8c8 100%);
+            border-left: 5px solid var(--amarelo);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .ato-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: var(--verde-medio);
+            transition: height 0.3s ease;
+        }
+
+        .ato-card:hover::before {
+            height: 100%;
+        }
+
+        .ato-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 30px rgba(0,143,76,0.2);
+            background: linear-gradient(135deg, #c0c0c0 0%, #b0b0b0 100%);
+        }
+
+        /* Variações de cor para cada card */
+        .ato-card:nth-child(1) {
+            border-left-color: #ff6b6b;
+        }
+
+        .ato-card:nth-child(1)::before {
+            background: #ff6b6b;
+        }
+
+        .ato-card:nth-child(2) {
+            border-left-color: #ffa500;
+        }
+
+        .ato-card:nth-child(2)::before {
+            background: #ffa500;
+        }
+
+        .ato-card:nth-child(3) {
+            border-left-color: var(--amarelo);
+        }
+
+        .ato-card:nth-child(3)::before {
+            background: var(--amarelo-escuro);
+        }
+
+        .ato-titulo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--preto);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ato-descricao {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .ato-link {
+            display: inline-block;
+            background: var(--verde-escuro);
+            color: var(--branco);
+            padding: 0.6rem 1.3rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .ato-link:hover {
+            background: var(--amarelo);
+            color: var(--preto);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,77,44,0.3);
+        }
+
+        /* Fundamentos Jurídicos */
+        .fundamentos-section {
+            background: linear-gradient(135deg, var(--branco) 0%, var(--amarelo-suave) 100%);
+            border: 3px solid var(--verde-medio);
+            padding: 3rem;
+            margin-bottom: 5rem;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,77,44,0.15);
+            border-radius: 8px;
+        }
+
+        .fundamentos-section::before {
+            content: '⚖️';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            background: var(--branco-gelo);
+            padding: 0 1rem;
+        }
+
+        .fundamentos-titulo {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--verde-escuro);
+            font-weight: 700;
+        }
+
+        .fundamento-item {
+            background: var(--branco);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--verde-medio);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #333;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 0 4px 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        .fundamento-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,112,60,0.15);
+        }
+
+        .fundamento-item strong {
+            color: var(--verde-escuro);
+            font-weight: 700;
+        }
+
+        /* Placar dos Parlamentares */
+        .placar-section {
+            margin-bottom: 5rem;
+        }
+
+        .placar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .senador-card {
+            background: var(--cinza-cards);
+            padding: 1.2rem;
+            border-left: 4px solid;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .senador-card.apoia {
+            border-left-color: var(--verde-medio);
+        }
+
+        .senador-card.contra {
+            border-left-color: #ff6b6b;
+        }
+
+        .senador-card.indeciso {
+            border-left-color: var(--amarelo);
+        }
+
+        .senador-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            background: #c8c8c8;
+        }
+
+        .senador-nome {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: var(--preto);
+        }
+
+        .senador-status {
+            font-size: 0.9rem;
+            color: #1a1a1a;
+        }
+
+        /* Rodapé */
+        .footer {
+            background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde-medio) 100%);
+            border-top: 4px solid var(--amarelo);
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--amarelo);
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            line-height: 1.8;
+            color: var(--branco);
+        }
+
+        .seguranca-dados {
+            text-align: center;
+            padding: 2rem;
+            background: var(--cinza-escuro);
+            border-top: 1px solid var(--amarelo);
+            margin-top: 2rem;
+        }
+
+        .seguranca-dados h3 {
+            color: var(--amarelo);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .seguranca-dados p {
+            line-height: 1.8;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            color: var(--branco);
+        }
+
+        .disclaimer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--cinza-medio);
+            border-top: 1px solid var(--amarelo);
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--branco);
+        }
+
+        .disclaimer strong {
+            color: var(--amarelo);
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Responsivo */
+        @media (max-width: 1024px) {
+            .header-fixo {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .header-texto {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .header-titulo {
+                text-align: center;
+                font-size: 1.1rem;
+            }
+
+            .header-direito {
+                margin: 0 auto;
+            }
+
+            .hero-section {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                margin-top: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .btn-principal {
+                font-size: 1rem;
+                padding: 1.2rem 1.5rem;
+            }
+
+            .fundamentos-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .foto-toffoli {
+                width: 60px;
+                height: 60px;
+            }
+
+            .fora-toffoli-header {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Animações de entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+    </style>
+</head>
+<body>
+    <!-- Header Fixo -->
+    <header class="header-fixo">
+        <div class="header-texto">
+            A Verdade sobre o Abuso de Poder e o Conflito de Interesses.
+        </div>
+        <h1 class="header-titulo">
+            Juntos para restaurar a imparcialidade na Suprema Corte. Assine o pedido de impeachment fundamentado na Lei 1.079/1950.
+        </h1>
+        <div class="header-direito">
+            <img src="toffoli.png" alt="Dias Toffoli" class="foto-toffoli">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSceparIN-7SiXn6gh6p17i7GQ5DhISYkpPeO2am20Rjyev9ww/viewform" target="_blank" style="text-decoration: none;">
+                <div class="fora-toffoli-header">FORA TOFFOLI</div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Container Principal -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section fade-in-up">
+            <div class="video-container">
+                <!-- Substitua o src pelo link do seu vídeo do YouTube -->
+                <iframe 
+                    src="https://youtu.be/nZdHs-VIAc0?si=ixOimzoLQWDpbnFQ" 
+                    title="Vídeo sobre o caso Dias Toffoli" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="cta-section">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSceparIN-7SiXn6gh6p17i7GQ5DhISYkpPeO2am20Rjyev9ww/viewform" class="btn-principal" target="_blank">
+                    Fora, Dias Toffoli!<br>
+                    Apoie o maior pedido de impeachment da história do Brasil!
+                </a>
+
+                <div class="autor-link">
+                    Autor: <a href="https://www.instagram.com/matheusfernandesdf?igsh=MWIwbnVhbHEwbmZnMQ%3D%3D&utm_source=qr" target="_blank">Matheus Fernandes</a>
+                </div>
+
+                <div class="contador-container">
+                    <div class="contador-titulo">META: 100.000 ASSINATURAS</div>
+                    <div class="progress-ring">
+                        <svg width="200" height="200">
+                            <circle class="progress-ring-bg" cx="100" cy="100" r="80"></circle>
+                            <circle class="progress-ring-circle" cx="100" cy="100" r="80" 
+                                    stroke-dasharray="502.65" 
+                                    stroke-dashoffset="452.39"
+                                    id="progressCircle"></circle>
+                        </svg>
+                        <div class="progress-text">
+                            <div class="progress-numero" id="assinaturas">0</div>
+                            <div class="progress-meta">de 100.000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Atos -->
+        <section class="atos-section fade-in-up delay-1">
+            <h2 class="section-title">Os Atos que Fundamentam o Pedido</h2>
+            
+            <div class="atos-grid">
+                <div class="ato-card">
+                    <h3 class="ato-titulo">⚖️ Conflito de Interesses (Caso Banco Master)</h3>
+                    <p class="ato-descricao">
+                        Denúncias graves apontam relações entre o Ministro e o banco master, o maior escândalo do Brasil. A justiça não pode ser negociada nos bastidores.
+                    </p>
+                    <a href="https://www.cnnbrasil.com.br/blogs/debora-bergamasco/politica/vorcaro-teria-relatado-pagamento-de-r-20-milhoes-a-empresa-de-toffoli/" 
+                       class="ato-link" 
+                       target="_blank">
+                        📰 CNN - Leia a Reportagem
+                    </a>
+                </div>
+
+                <div class="ato-card">
+                    <h3 class="ato-titulo">🚫 Impunidade Bilionária</h3>
+                    <p class="ato-descricao">
+                        A suspensão monocrática das multas da J&F e Novonor anula anos de combate à corrupção e fere a economia nacional.
+                    </p>
+                    <a href="https://www.cnnbrasil.com.br/politica/toffoli-suspende-multa-de-mais-de-r-10-bilhoes-do-acordo-de-leniencia-da-jf/" 
+                       class="ato-link" 
+                       target="_blank">
+                        📰 CNN - Leia a Reportagem
+                    </a>
+                </div>
+
+                <div class="ato-card">
+                    <h3 class="ato-titulo">🛡️ Fim do Juiz Natural</h3>
+                    <p class="ato-descricao">
+                        O Inquérito das Fake News, aberto por Toffoli, criou um sistema onde o julgador é também investigador e vítima.
+                    </p>
+                    <a href="https://www.gazetadopovo.com.br/republica/inquerito-das-fake-news-stf-vitima-julgador/" 
+                       class="ato-link" 
+                       target="_blank">
+                        📰 Gazeta do Povo - Leia a Reportagem
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fundamentos Jurídicos -->
+        <section class="fundamentos-section fade-in-up delay-2">
+            <h2 class="fundamentos-titulo">Fundamento Legal - Lei 1.079/1950</h2>
+            <div class="fundamento-item">
+                <strong>Art. 39, item 2:</strong> Julgar sendo suspeito (Caso Banco Master).
+            </div>
+            <div class="fundamento-item">
+                <strong>Art. 39, item 5:</strong> Proceder de modo incompatível com a dignidade e o decoro do cargo.
+            </div>
+        </section>
+
+        <!-- Placar dos Parlamentares -->
+        <section class="placar-section fade-in-up delay-3">
+            <h2 class="section-title">Parlamentares que nos apoiam</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                Acompanhe o posicionamento dos parlamentares sobre o pedido de impeachment
+            </p>
+            
+            <div class="placar-grid">
+                <!-- Exemplos - você pode atualizar conforme necessário -->
+                <div class="senador-card indeciso">
+                    <div class="senador-nome">Aguardando Posicionamento</div>
+                    <div class="senador-status">⚠️ Em análise</div>
+                </div>
+                <!-- Adicione mais parlamentares conforme necessário -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Quem Somos</h3>
+                    <p>
+                        Grupo de cidadãos, juristas e parlamentares comprometidos com a Constituição de 1988.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Movimento Apartidário</h3>
+                    <p>
+                        Este é um movimento de natureza estritamente apartidária, movido pelo interesse público e pelo compromisso inegociável com a justiça e desenvolvimento do Brasil.
+                    </p>
+                </div>
+            </div>
+
+            <div class="seguranca-dados">
+                <h3>Segurança de Dados</h3>
+                <p>
+                    Seus dados são protegidos e serão utilizados exclusivamente para o protocolo no Senado Federal.
+                </p>
+                <p style="margin-top: 1rem;">
+                    <strong>Fundamento Legal LGPD:</strong><br>
+                    Art. 7º - Tratamento de dados pessoais somente poderá ser realizado mediante consentimento do titular.<br>
+                    Art. 16 - Os dados pessoais serão eliminados após o término de seu tratamento.
+                </p>
+            </div>
+
+            <div class="disclaimer">
+                <strong>"Eu apoio o Pedido de Impeachment do Ministro Dias Toffoli"</strong>
+                Ao preencher este formulário, você se torna coautor cívico desta denúncia protocolada no Senado Federal (Art. 41, Lei 1.079/50).
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ====================================================================
+        // CONFIGURAÇÃO: URL do Google Apps Script para contagem automática
+        // ====================================================================
+        const API_URL = 'https://script.google.com/macros/s/AKfycbwIlNiNGfXnJiAtG4qLIYDodFJh2hOuF3Lv074aLJ7eaAmX0gYpFoQLcEDsou2yc5_t/exec';
+        
+        // Meta de assinaturas
+        const metaAssinaturas = 100000;
+        
+        // Função para buscar assinaturas da API
+        async function buscarAssinaturas() {
+            try {
+                const response = await fetch(API_URL);
+                const data = await response.json();
+                return data.assinaturas || 1;
+            } catch (error) {
+                console.log('Usando contador manual. Configure a API para atualização automática.');
+                return 1;
+            }
+        }
+        
+        // Função para atualizar o contador visual
+        function atualizarContador(assinaturasAtuais) {
+            const numero = document.getElementById('assinaturas');
+            const circulo = document.getElementById('progressCircle');
+            
+            // Animar número
+            let atual = 0;
+            const incremento = assinaturasAtuais / 50;
+            const timer = setInterval(() => {
+                atual += incremento;
+                if (atual >= assinaturasAtuais) {
+                    atual = assinaturasAtuais;
+                    clearInterval(timer);
+                }
+                numero.textContent = Math.floor(atual).toLocaleString('pt-BR');
+            }, 30);
+            
+            // Atualizar círculo de progresso
+            const circunferencia = 2 * Math.PI * 80;
+            const progresso = (assinaturasAtuais / metaAssinaturas) * circunferencia;
+            const offset = circunferencia - progresso;
+            circulo.style.strokeDashoffset = offset;
+        }
+        
+        // Inicializar contador quando a página carregar
+        window.addEventListener('load', async () => {
+            setTimeout(async () => {
+                const assinaturas = await buscarAssinaturas();
+                atualizarContador(assinaturas);
+            }, 500);
+            
+            // Atualiza a cada 30 segundos
+            setInterval(async () => {
+                const assinaturas = await buscarAssinaturas();
+                const numeroAtual = parseInt(document.getElementById('assinaturas').textContent.replace(/\./g, ''));
+                
+                if (assinaturas !== numeroAtual) {
+                    atualizarContador(assinaturas);
+                }
+            }, 30000);
+        });
+    </script>
+</body>
+</html>
